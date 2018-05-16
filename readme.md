@@ -50,7 +50,12 @@ webpack
 
 ./node_modules/.bin/webpack-dev-server
 
-【url-loader】
+【url-loader】 file-loader
 npm install url-loader --save-dev
+
+npm install --save-dev file-loader
+  "file-loader": "^1.1.11",
+
+【style-loader!css-loader （ css-loader、style-loader 和 less-loader） 】
 
 

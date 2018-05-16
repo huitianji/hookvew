@@ -1,6 +1,7 @@
 
 import {m} from  "./mix.js";
-//import img from '../../images/224136.png';
+import css from '../../css/css.css';
+//require("../../css/css.css");
 
-console.log(m(1,1));
-console.log("qqqqq");
+console.log(m(1,1233));
+console.log("222211111");

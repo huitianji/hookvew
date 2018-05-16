@@ -34,13 +34,33 @@ module.exports = {
                     {
                         loader: 'url-loader',
                         options: {
-                            limit: 1000,
-                            name: 'images/[hash][path][name].[ext]'
-                            //name: 'images/[name].[hash:7].[ext]'
+                            limit: 10000,
+                            name: '[path][name].[ext]',
+                            //outputPath: '',
+                            publicPath: '../../' //你实际项目的引用地址前缀
                         }
                     }
                 ]
-            }
+            },
+            //{
+            //    test: /\.(png|jpg|gif)$/,
+            //    use:[
+            //        {
+            //            loader: 'file-loader',
+            //            options: {
+            //                name: '[path][name].[ext]',
+            //                outputPath: 'images/'
+            //            }
+            //        }
+            //    ]
+            //}
+            //,
+            {
+                test: /\.css$/,
+                use: [ 'style-loader', 'css-loader' ]
+
+            },
+
             //{
             //    test:/\.(png|jpg)$/,
             //    //loader:'url-loader?limit = 4000'
