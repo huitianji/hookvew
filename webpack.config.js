@@ -67,7 +67,11 @@ module.exports = {
             //    loader: 'url-loader?limit=1000&name=./img/[hash].[ext]'
             //}//4000 == 4k 如果大小小于4k 转换成base64引入到页面里面去
 
-
+            //处理.vue文件
+            //{
+            //    test: /\.vue$/,
+            //    loader: 'vue-loader'
+            //}
         ]
     },
     plugins:[

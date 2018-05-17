@@ -2,7 +2,7 @@ use strict';
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
-    //Ö¸¶¨Èë¿Ú
+    //æŒ‡å®šå…¥å£
     entry: {
         main: './main.js'
     },
@@ -23,14 +23,14 @@ module.exports = {
             }, {
                 test: /\.js$/,
                 loader: 'babel-loader',
-                //ÅÅ³ıÂ·¾¶
+                //æ’é™¤è·¯å¾„
                 exclude: /node_modules/,
                 options: {
                     presets: ['es2015'],
                     plugins: ['transform-runtime']
                 }
             },
-            //´¦Àí.vueÎÄ¼ş
+            //å¤„ç†.vueæ–‡ä»¶
             {
                 test: /\.vue$/,
                 loader: 'vue-loader'
@@ -42,23 +42,23 @@ module.exports = {
             template: './index.html',
         })
     ],
-    //ÈÃµ¥ÎÄ¼şµÄ·½Ê½Ò²ÄÜÓĞtemplate×ö×é¼şµÄ±àÒë£¬°ü»áÔö´ó30%
-    //Èç¹ûÊÇ.runtimeµÄÎÄ¼ş¾ÍĞ¡30%
-    //ÔÚmain.jsÖĞ  import Vue from 'vue';
-    resolve: { //ÎÄ¼şÂ·¾¶¼ÓÔØ½â¾ö·½°¸
-        alias: { //±ğÃû
-            //'vue$' »áºöÂÔ import xxx from 'vue/dist/vue.runtime.js'
+    //è®©å•æ–‡ä»¶çš„æ–¹å¼ä¹Ÿèƒ½æœ‰templateåšç»„ä»¶çš„ç¼–è¯‘ï¼ŒåŒ…ä¼šå¢å¤§30%
+    //å¦‚æœæ˜¯.runtimeçš„æ–‡ä»¶å°±å°30%
+    //åœ¨main.jsä¸­  import Vue from 'vue';
+    resolve: { //æ–‡ä»¶è·¯å¾„åŠ è½½è§£å†³æ–¹æ¡ˆ
+        alias: { //åˆ«å
+            //'vue$' ä¼šå¿½ç•¥ import xxx from 'vue/dist/vue.runtime.js'
             'vue$': 'vue/dist/vue.esm.js'
-                //µ±import xx from '1213432vue' -> vue/dist/vue.common.js
+                //å½“import xx from '1213432vue' -> vue/dist/vue.common.js
         }
     },
-    devServer: { //ÅäÖÃwebpack-dev-server -> express·şÎñÆ÷µÄÑ¡Ïî
+    devServer: { //é…ç½®webpack-dev-server -> expressæœåŠ¡å™¨çš„é€‰é¡¹
         host: '127.0.0.1', //A
         port: 9999,
-        //´úÀí
+        //ä»£ç†
         proxy: { //this.$ajax.get('/v2/xxxx')
-            '/v2/*': { // Èç¹ûµ±Ç°ÇëÇóµÄurl ÊÇÒÔ/v2¿ªÍ·/xxxxxx,ÔòÄ¬ÈÏÇëÇó127.0.1/v2/xxx
-                changeOrigin: true, //changeOrigin¾Í°Ñµ±Ç°±¾µØexpress·şÎñÆ÷ÓÉA±äÎªÏòBÇëÇó²¢·µ»Ø
+            '/v2/*': { // å¦‚æœå½“å‰è¯·æ±‚çš„url æ˜¯ä»¥/v2å¼€å¤´/xxxxxx,åˆ™é»˜è®¤è¯·æ±‚127.0.1/v2/xxx
+                changeOrigin: true, //changeOriginå°±æŠŠå½“å‰æœ¬åœ°expressæœåŠ¡å™¨ç”±Aå˜ä¸ºå‘Bè¯·æ±‚å¹¶è¿”å›
                 target: 'https://api.douban.com/', //B
             }
         }
